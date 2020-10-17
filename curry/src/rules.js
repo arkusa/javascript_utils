@@ -6,4 +6,4 @@ export const defaultExecRule = ({ func, argvs }) =>
 // add(1)(2)();
 // 没有限制参数数量
 export const extraCallExecRule = ({ nextArgvs )) =>
-  !nextArgvs;
+  nextArgvs === undefined;
