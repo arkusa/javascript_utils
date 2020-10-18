@@ -25,7 +25,7 @@ function thunkify(func) {
   F.prototype = func.prototype;
   acceptNextArgvs.prototype = new F();
   acceptNextArgvs.prototype.constructor = acceptNextArgvs;
-  acceptNextArgvs.prototype.toString = () => func.toString();
+  acceptNextArgvs.toString = () => func.toString();
 
   return acceptNextArgvs;
 }
