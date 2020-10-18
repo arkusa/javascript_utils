@@ -36,7 +36,7 @@ function curryFactory(execRule = defaultExecRule) {
     F.prototype = func.prototype;
     acceptNextArgvs.prototype = new F();
     acceptNextArgvs.prototype.constructor = acceptNextArgvs;
-    acceptNextArgvs.toString = () => func.toString();
+    acceptNextArgvs.prototype.toString = () => func.toString();
   
     return acceptNextArgvs;
   }
