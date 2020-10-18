@@ -34,7 +34,7 @@ function partialFactory(placeholder) {
   function partial(func, ...argvs) {
 
     function acceptNextArgvs(...nextArgvs) {
-      return func.call(this, ...concat(argvs, nextArgvs));
+      return func.call(this, ...concat(argvs, nextArgvs, placeholder));
     }
 
     function F() {}
