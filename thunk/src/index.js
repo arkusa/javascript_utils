@@ -20,6 +20,13 @@ function thunkify(func) {
     return acceptCallback;
   }
 
+  function F() {}
+
+  F.prototype = func.prototype;
+  acceptNextArgvs.prototype = new F();
+  acceptNextArgvs.prototype.constructor = acceptNextArgvs;
+  acceptNextArgvs.prototype.toString = () => func.toString();
+
   return acceptNextArgvs;
 }
 
